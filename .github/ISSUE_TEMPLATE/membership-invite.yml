@@ -1,0 +1,75 @@
+name: Membership / Invite Request
+description: Request access to join this GitHub organization as a member.
+title: "Membership Request: <your institution / name>"
+labels:
+  - membership
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your interest in joining the community.
+        Please complete this form so maintainers can review your request.
+
+  - type: input
+    id: full_name
+    attributes:
+      label: Full name
+      placeholder: Jane Doe
+    validations:
+      required: true
+
+  - type: input
+    id: github_username
+    attributes:
+      label: GitHub username
+      placeholder: janedoe
+      description: Please provide your GitHub handle (without @).
+    validations:
+      required: true
+
+  - type: input
+    id: institution
+    attributes:
+      label: Institution / Organization
+      placeholder: Example University
+    validations:
+      required: true
+
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: What are you requesting?
+      options:
+        - Organization membership
+        - Repository collaborator access
+        - Both
+    validations:
+      required: true
+
+  - type: textarea
+    id: use_case
+    attributes:
+      label: How do you plan to contribute?
+      description: Share what you would like to build, improve, or maintain.
+      placeholder: I want to contribute integration examples for...
+    validations:
+      required: true
+
+  - type: textarea
+    id: repos
+    attributes:
+      label: Target repositories (if known)
+      description: List repos or areas you are most interested in.
+      placeholder: repo-a, repo-b, docs
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: code_of_conduct
+    attributes:
+      label: Confirmation
+      options:
+        - label: I will follow community standards and repository contribution guidelines.
+          required: true
+        - label: I understand this is a community space and support is best-effort.
+          required: true
